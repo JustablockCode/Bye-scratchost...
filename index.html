@@ -45,10 +45,21 @@
 <body>
     <div class="container">
         <h1>Thank you for using ScratcHost while it was available.</h1>
-        <p>ScratcHost will/has shut down completely on 1/6/2025 due to lack of usage and unreliability. We ventured into website hosting with no experience, hoping to do something good. Unfortunately, we discovered that nobody wanted to use paid features and got upset when we removed free features.</p>
+        <p id="shutdown-message"></p>
         <p>We apologize if your code is hosted with us and is lost, but we may be able to retrieve it. Join the temporary server to chat with us: <a href="https://discord.gg/wmSsE9rwNw">Discord</a>.</p>
         <p>We might return to hosting in the future, but we are not sure.</p>
         <p>- Justablock, Ryan, Crash, and the rest of the ScratcHost maintainers/contributors.</p>
     </div>
+    <script>
+        const shutdownDate = new Date('2025-01-06');
+        const currentDate = new Date();
+        const messageElement = document.getElementById('shutdown-message');
+
+        if (currentDate < shutdownDate) {
+            messageElement.textContent = 'ScratcHost will shut down completely on 6th January 2025 due to lack of usage and unreliability. We ventured into website hosting with no experience, hoping to do something good. Unfortunately, we discovered that nobody wanted to use paid features and got upset when we removed free features.';
+        } else {
+            messageElement.textContent = 'ScratcHost has shut down completely on 6th January 2025 due to lack of usage and unreliability. We ventured into website hosting with no experience, hoping to do something good. Unfortunately, we discovered that nobody wanted to use paid features and got upset when we removed free features.';
+        }
+    </script>
 </body>
 </html>
